@@ -51,10 +51,13 @@
         if ($('.multilevelMenu').length > 0) {
           $('body').append('<span class="js-swipe"></span>');
           var touchstartX = 0,
-              touchendX = 0;
+              touchendX = 0,
+              touchstartY = 0,
+              touchendY = 0;
           // open menu on tap swipe
           $('.js-swipe, .multilevelMenu').on('touchstart', function(e) {
             touchstartX = e.originalEvent.changedTouches[0].pageX;
+            touchstartY = e.originalEvent.changedTouches[0].pageY;
           });
 
           $('.js-swipe').on('touchend', function (e) {

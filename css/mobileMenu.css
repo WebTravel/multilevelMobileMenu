@@ -1,0 +1,312 @@
+.multilevelOverlay {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: opacity 0.4s, visibility 0.4s linear 0.4s;
+  transition: opacity 0.4s, visibility 0.4s linear 0.4s;
+  visibility: visible;
+  cursor: pointer;
+  z-index: 21;
+  position: fixed;
+  top: 0;
+  right: 0;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  pointer-events: none
+}
+
+.bodyFixed .multilevelOverlay {
+  opacity: 1;
+  pointer-events: auto
+}
+
+.bodyFixed {
+  overflow: hidden;
+}
+
+/*Toogle main-style */
+span.toggle {
+  height: 25px;
+  width: 30px;
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  cursor: pointer;
+}
+
+.toggle > span {
+  width: 100%;
+  height: 100%;
+}
+
+.toggle > span em {
+  display: block;
+  -webkit-transition: 800ms ease all;
+  transition: 800ms ease all;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  top: 10px;
+  background: #f09e00;
+}
+.toggle > span em:first-child {
+  top: 0;
+}
+.toggle > span em:last-child {
+  top: 20px;
+}
+
+/*Toogle animate-style */
+.bodyFixed .toggle > span em:first-child, .bodyFixed .toggle > span em:last-child {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+  -webkit-transition: 800ms ease all;
+  transition: 800ms ease all;
+  top: 10px;
+}
+
+.bodyFixed .toggle > span em:last-child {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+.bodyFixed .toggle > span em {
+  position: absolute;
+  top: 10px;
+}
+.bodyFixed .toggle > span em:last-child {
+  top: 10px;
+}
+
+.bodyFixed .toggle > span em:nth-child(2) {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+  opacity: 0;
+  -webkit-transition: 400ms ease all;
+  transition: 400ms ease all;
+}
+
+.js-swipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30px;
+  z-index: 6;
+  background: transparent;
+}
+
+/*Animate */
+@-webkit-keyframes animate {
+  15% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  30% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+  50% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  65% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  80% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes animate {
+  15% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  30% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+  50% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  65% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  80% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.bodyFixed .js-toggle {
+  -webkit-animation: animate 1500ms ease;
+  animation: animate 1500ms ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/*Animate */
+
+/*Toogle end-styles */
+
+/*Menu-stiles */
+.multilevelMenu {
+    display: block;
+  position: fixed;
+  top: 40px;
+    left: 0;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 400ms linear;
+  transition: -webkit-transform 400ms linear;
+  transition: transform 400ms linear;
+  transition: transform 400ms linear, -webkit-transform 400ms linear;
+  will-change: transform;
+  z-index: 23;
+  overflow-x: hidden;
+  border-top: 1px solid #d7d7d7;
+}
+
+.multilevelMenu > * {
+    padding: 0;
+  }
+
+.bodyFixed .multilevelMenu {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 400ms linear;
+  transition: -webkit-transform 400ms linear;
+  transition: transform 400ms linear;
+  transition: transform 400ms linear, -webkit-transform 400ms linear;
+}
+
+.multilevelMenu ul {
+    display: block;
+  padding: 0;
+  margin: 0;
+  width: 300px;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 400ms linear;
+  transition: -webkit-transform 400ms linear;
+  transition: transform 400ms linear;
+  transition: transform 400ms linear, -webkit-transform 400ms linear;
+}
+
+.multilevelMenu > ul {
+  height: auto;
+}
+
+.multilevelMenu ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 1;
+  background: #fff;
+  opacity: 0;
+}
+
+.multilevelMenu ul ul.active-menu {
+  opacity: 1;
+  z-index: 3;
+}
+
+.multilevelMenu ul.close-list {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 400ms linear;
+  transition: -webkit-transform 400ms linear;
+  transition: transform 400ms linear;
+  transition: transform 400ms linear, -webkit-transform 400ms linear;
+}
+
+.multilevelMenu li {
+  list-style-type: none;
+    display: block;
+}
+
+.multilevelMenu a {
+  text-decoration: none;
+  color: #473420;
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  position: relative;
+  box-sizing: border-box;
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+
+.multilevelMenu .js-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 35px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #f09e00;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.multilevelMenu .js-back {
+  list-style-type: none;
+  padding: 0.5em 1em;
+  text-align: right;
+  color: #fff;
+  background-image: -webkit-linear-gradient(bottom, #ffc252 0%, #f09e00 100%);
+  background-image: linear-gradient(to top, #ffc252 0%, #f09e00 100%);
+  cursor: pointer;
+  line-height: 1.35;
+  position: relative;
+  font-size: 1.25rem;
+}
+
+.multilevelMenu .back > * {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+  font-size: 1.5rem;
+}

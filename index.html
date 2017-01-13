@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MultiMenu</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/noadaptive.css">
+  <link rel="stylesheet" href="css/mobileMenu.css">
+  <!--Подключаем плагин-->
+  <script src="js/mobileMenu.js"></script>
+  <!--Подключаем плагин-->
+
+  <!--Меняем стандартные свойства плагина-->
+  <script>
+    $( document ).ready(function() {
+      $('.menu').mobileMenu({
+          'width': 900,
+          'next': '<div class="qq">&rsaquo;</div>',
+          'prev': '<div class="back-arrow">&lsaquo;</div>'
+      });
+    });
+  </script>
+  <!--Меняем стандартные свойства плагина-->
+
+</head>
+<body>
+<span class="main-header-title">MultilevelMobileMenu</span>
+<header>
+  <div class="header__top">
+    <div class="inner">
+          <span class="toggle js-toggle">
+            <span>
+              <em></em>
+              <em></em>
+              <em></em>
+            </span>
+          </span>
+      </div>
+  </div>
+</header>
+<nav class="menu one two three four" id="mainmenu">
+  <div class="inner">
+  <ul>
+    <li><a href="#">Одежда</a>
+      <ul>
+        <li><a href="#">Кофточки</a>
+          <ul>
+            <li><a href="#">Цветные</a></li>
+            <li><a href="#">Полосатые</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Платья</a>
+          <ul>
+            <li><a href="#">Летние</a></li>
+            <li><a href="#">Выпускные</a></li>
+            <li><a href="#">Свадебные</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Современные</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Обувь</a>
+      <ul>
+        <li><a href="#">Туфли</a>
+          <ul>
+            <li><a href="#">Мужские</a>
+              <ul>
+                <li><a href="#">Замшевые</a></li>
+                <li><a href="#">Кожаные</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Женские</a>
+              <ul>
+                <li><a href="#">Низкие</a></li>
+                <li><a href="#">Высокие</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Кроссовки</a>
+          <ul>
+            <li><a href="#">Nike</a></li>
+            <li><a href="#">Puma</a></li>
+            <li><a href="#">Reebook</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Сапоги</a>
+          <ul>
+            <li><a href="#">Ботфорты</a></li>
+            <li><a href="#">Полусапоги</a></li>
+            <li><a href="#">Брендовые</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#">Шарфы и перчатки</a></li>
+    <li><a href="#">Аксессуары</a>
+      <ul>
+        <li><a href="#">Ремни</a>
+          <ul>
+            <li><a href="#">Malgarto</a></li>
+            <li><a href="#">Zilli Zilli</a></li>
+            <li><a href="#">River</a></li>
+            <li><a href="#">Pezzo</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Очки</a>
+          <ul>
+            <li><a href="#">Dior</a></li>
+            <li><a href="#">Ray-Ban</a></li>
+            <li><a href="#">Polaroid</a></li>
+            <li><a href="#">Guess</a></li>
+            <li><a href="#">Matthew Williamson</a></li>
+            <li><a href="#">Vogue</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#">Зонты</a></li>
+  </ul>
+  </div>
+</nav>
+<div class="content">
+  <div class="inner">
+
+  <section>
+    <h2>Скачать (Версия 1.1)</h2>
+    <a href="#" class="download__link">Скачать (прямая ссылка)</a>
+    <a href="#" class="download__link">Скачать (GitHub)</a>
+  </section>
+
+  <section>
+    <hgroup>
+      <h2>Обзор</h2>
+      <h3>Описание</h3>
+    </hgroup>
+
+    <p>Основные возможности меню</p>
+    <ol>
+      <li>Поддержка бесконечного числа уровня вложенности</li>
+      <li>Поддержка swipe-раскрытия и swipe-закрытия меню</li>
+      <li>Адаптивность стилей</li>
+      <li>Легкая и быстрая настройка</li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>Системные требования</h3>
+    <ul>
+      <li>Jquery 1.9+</li>
+      <li>Android: 4.4+</li>
+      <li>IOS 7.1+</li>
+    </ul>
+  </section>
+
+
+  <section>
+    <h3>Список поддерживаемых устройств</h3>
+    <p class="switch__button"><span>IOS+</span></p>
+    <ol class="switch__content">
+      <li>Iphone 4</li>
+      <li>Iphone 4S</li>
+      <li>Iphone 5</li>
+      <li>Iphone 5S</li>
+      <li>Iphone 6</li>
+      <li>Iphone 6 plus</li>
+      <li>Iphone 7</li>
+    </ol>
+
+    <p class="switch__button"><span>Android+</span></p>
+    <ol class="switch__content">
+      <li>Lg Nexus 5 (D820)</li>
+      <li>Lg Nexus 5 (D821)</li>
+    </ol>
+
+    <p class="switch__button"><span>Windows-Phone+</span></p>
+    <ol class="switch__content">
+      <li>Lg Nexus 5 (D820)</li>
+      <li>Lg Nexus 5 (D821)</li>
+    </ol>
+  </section>
+
+  <section>
+    <hgroup>
+      <h2>Работа с плагином</h2>
+      <h3>Подключение материалов и создание Html-структуры</h3>
+    </hgroup>
+  </section>
+
+  <p class="under bold">Шаг 1: Подключение jQuery.</p>
+  <p>
+    Для установки необходимо подключить jquery версии 1.9 и выше. Подключение описано ниже. Внимание! Подключаем только один вариант!</p>
+  <div class="codearea">
+    <p>Подключение jquery последней версии</p>
+    <code>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;</code>
+  </div>
+
+  <div class="codearea">
+    <p>Подключение jquery 1.11.0</p>
+    <code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"&gt;&lt;/script&gt;</code>
+  </div>
+
+  <br />
+
+  <p class="under bold">Шаг 2: Подключение ресурсов</p>
+  <div class="codearea">
+    <p>Javascript file</p>
+    <code>&lt;script src="/js/mobileMenu.min.js"&gt;&lt;/script&gt;</code>
+  </div>
+
+  <div class="codearea">
+    <p>CSS file</p>
+    <code>&lt;link href="/css/mobileMenu.css" rel="stylesheet" /&gt;</code>
+  </div>
+
+  <p class="under bold">Шаг 3: Создание Html-структуры меню</p>
+  <p>Меню должно состоять из вложенных друг в друга списков, составленных через элементы ul, li, a
+  Пример правильной структуры:</p>
+
+  <div class="codearea">
+    <code>
+      <span>&lt;nav class="menu"&gt;</span>
+      <br />
+      <span>&lt;ul&gt;</span>
+      <span style="padding-left: 15px;">&lt;li&gt;&lt;a href="#"&gt;Одежда&lt;/a&gt;</span>
+      <span style="padding-left: 30px;">&lt;ul&gt;</span>
+      <span style="padding-left: 45px;">&lt;li&gt;&lt;a href="#"&gt;Кофточки&lt;/a&gt;&lt;li&gt;</span>
+      <span style="padding-left: 60px;">&lt;ul&gt;</span>
+      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Цветные&lt;/a&gt;&lt;/li&gt;</span>
+      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Полосатые&lt;/a&gt;&lt;/li&gt;</span>
+      <span style="padding-left: 60px;">&lt;/ul&gt;</span>
+      <span style="padding-left: 45px;">&lt;/li&gt;</span>
+      <span style="padding-left: 45px;">&lt;li&gt;&lt;a href="#"&gt;Платья&lt;/a&gt;</span>
+      <span style="padding-left: 60px;">&lt;ul&gt;</span>
+      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Летние&lt;/a&gt;&lt;/li&gt;</span>
+      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Выпускные&lt;/a&gt;&lt;/li&gt;</span>
+      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Свадебные&lt;/a&gt;&lt;/li&gt;</span>
+      <span style="padding-left: 60px;">&lt;/ul&gt;</span>
+      <span style="padding-left: 45px;">&lt;/li&gt;</span>
+      <span style="padding-left: 45px;">&lt;li&gt;&lt;a href="#"&gt;Современные&lt;/a&gt;&lt;/li&gt;</span>
+      <span style="padding-left: 30px;">&lt;/ul&gt;</span>
+      <span style="padding-left:15px;">&lt;/li&gt;</span>
+      <span style="padding-left: 15px;">&lt;li&gt;&lt;a href="#"&gt;Обувь&lt;/a&gt;&lt;/li&gt;</span>
+      <span style="padding-left: 15px;">&lt;li&gt;&lt;a href="#"&gt;Зонты&lt;/a&gt;&lt;/li&gt;</span>
+      <span style="padding-left: 15px;">&lt;li&gt;&lt;a href="#"&gt;Шарфы и перчатки&lt;/a&gt;&lt;/li&gt;</span>
+      <span>&lt;/ul&gt;</span>
+      <br />
+      <span>&lt;/nav&gt;</span>
+    </code>
+  </div>
+
+  <p class="under bold">Шаг 4: Создание Html-структуры кнопки "Гамбургер"</p>
+  <p>Для корректной работы меню необходимо создать сруктуру кнопки "Гамбургер" следующего вида:</p>
+  <div class="codearea">
+    <code>
+      <span>&lt;span class="toggle js-toggle"&gt;</span>
+      <span style="padding-left: 15px;">&lt;span&gt;</span>
+      <span style="padding-left: 30px;">&lt;em&gt;&lt;/em&gt;</span>
+      <span style="padding-left: 30px;">&lt;em&gt;&lt;/em&gt;</span>
+      <span style="padding-left: 30px;">&lt;em&gt;&lt;/em&gt;</span>
+      <span style="padding-left: 15px;">&lt;/span&gt;</span>
+      <span>&lt;/span&gt;</span>
+    </code>
+  </div>
+
+  <p class="under bold">Шаг 5: Вызов плагина</p>
+  <p>Вызов плагина осуществляется при помощи применения метода ".mobileMenu()" на обертку общего списка. Ниже представлен пример вызова плагина.</p>
+  <div class="codearea">
+    <code>
+      <span>$( document ).ready(function() {</span>
+      <span style="padding-left: 15px;">$('.menu').mobileMenu();</span>
+      <span>});</span>
+    </code>
+  </div>
+
+  <br />
+  <br />
+
+  <h3>Параметры плагина</h3>
+  <section>
+    <p class="bold">width</p>
+    <p>Значение ширины экрана в пикселях, меньше которого меню приобретет мобильный вид</p>
+    <div class="codearea">
+      <code>
+        <span>Значение по умолчанию: <em>1024</em></span>
+        <span>Возможные значения: <em>Целые числа</em></span>
+      </code>
+    </div>
+  </section>
+
+  <section>
+    <p class="bold">next</p>
+    <p>Html-код кнопки показа следующего уровня меню</p>
+    <div class="codearea">
+      <code>
+        <span>Значение по умолчанию: <em>&lt;span class="arrow"&gt;&rsaquo;&lt;/span&gt;</em></span>
+        <span>Возможные значения: <em>Любой html-селектор</em></span>
+      </code>
+    </div>
+  </section>
+
+  <section>
+    <p class="bold">prev</p>
+    <p>Html-код стрелки показа предыдущего уровня меню</p>
+    <div class="codearea">
+      <code>
+        <span>Значение по умолчанию: <em>&lt;span class="back-arrow"&gt;&rsaquo;&lt;/span&gt;</em></span>
+        <span>Возможные значения: <em>Любой html-селектор</em></span>
+      </code>
+    </div>
+  </section>
+
+
+  <br />
+  <br />
+  <section>
+    <h3>Пример вызова плагина со своими параметрами</h3>
+    <div class="codearea">
+      <code>
+        <span>$( document ).ready(function() {</span>
+        <span style="padding-left: 15px;">$('.menu').mobileMenu({</span>
+        <span style="padding-left: 30px;">'width': 900,</span>
+        <span style="padding-left: 30px;">'next': '&lt;div class="qq"&gt;&rsaquo;&lt;/div&gt;',</span>
+        <span style="padding-left: 30px;">'next': '&lt;div class="back-arrow"&gt;&lsaquo;&lt;/div&gt;',</span>
+        <span style="padding-left: 15px;">});</span>
+        <span>});</span>
+      </code>
+    </div>
+  </section>
+
+  <br />
+  <br />
+  </div>
+</div>
+
+<script>
+  $('.switch__button').click(function(){
+    $(this).next('ol').toggleClass('switch__content--show')
+  })
+</script>
+</body>
+</html>

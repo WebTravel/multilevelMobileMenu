@@ -70,7 +70,7 @@
 
           $('.multilevelMenu').on('touchend', function (e) {
             touchendX = e.originalEvent.changedTouches[0].pageX;
-            if (touchendX < touchstartX) {
+            if (touchendX < touchstartX && touchendY !== touchstartY) {
               $('body').removeClass('bodyFixed');
               setTimeout(function () {
                 $('.close-list').removeClass('close-list');

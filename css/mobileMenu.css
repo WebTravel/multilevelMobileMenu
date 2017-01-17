@@ -214,10 +214,6 @@ span.toggle {
   transition: transform 400ms linear, -webkit-transform 400ms linear;
 }
 
-.multilevelMenu > ul {
-  height: auto;
-}
-
 .multilevelMenu ul ul {
   position: absolute;
   top: 0;

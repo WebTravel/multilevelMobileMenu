@@ -48,11 +48,13 @@
 
         //swipe function for open menu
         function SwipeOpenMenu() {
-          //create swipe-element
+          //create swipe-selector
           if ($('.multilevelMenu').length > 0) {
             $('body').append('<span class="js-swipe"></span>');
             var touchstartX = 0,
-                touchendX = 0;
+                touchendX = 0,
+                touchstartY = 0,
+                touchendY = 0;
             // open menu on tap swipe
             $('.js-swipe, .multilevelMenu').on('touchstart', function(e) {
               touchstartX = e.originalEvent.changedTouches[0].pageX;
@@ -112,7 +114,6 @@
                   element.find('li').find('ul').prepend('<li class="back js-back"></li>');
 
                   //view next level menu
-
                   $(link).on("click", ".js-arrow", function (e) {
                     e.preventDefault();
                     e.stopPropagation();

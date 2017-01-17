@@ -66,7 +66,7 @@
               }
             });
 
-
+            //close menu left-swipe
             $('.multilevelMenu').on('touchend', function (e) {
               touchendX = e.originalEvent.changedTouches[0].pageX;
               if (touchendX < (touchstartX - 20)) {

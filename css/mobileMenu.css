@@ -208,10 +208,11 @@ span.toggle {
   position: relative;
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  -webkit-transition: -webkit-transform 400ms linear;
-  transition: -webkit-transform 400ms linear;
-  transition: transform 400ms linear;
-  transition: transform 400ms linear, -webkit-transform 400ms linear;
+  -webkit-transition: -webkit-transform 200ms linear;
+  transition: -webkit-transform 200ms linear;
+  transition: transform 200ms linear;
+  transition: transform 200ms linear, -webkit-transform 200ms linear;
+  overflow: hidden;
 }
 
 .multilevelMenu ul ul {
@@ -226,15 +227,23 @@ span.toggle {
 .multilevelMenu ul ul.active-menu {
   opacity: 1;
   z-index: 3;
-}
-
-.multilevelMenu ul.close-list {
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 400ms linear;
-  transition: -webkit-transform 400ms linear;
-  transition: transform 400ms linear;
-  transition: transform 400ms linear, -webkit-transform 400ms linear;
+  -webkit-transition: -webkit-transform 200ms linear;
+  transition: -webkit-transform 200ms linear;
+  transition: transform 200ms linear;
+  transition: transform 200ms linear, -webkit-transform 200ms linear;
+}
+
+.multilevelMenu ul ul.hidden-menu {
+  opacity: 1;
+  z-index: 3;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 200ms linear;
+  transition: -webkit-transform 200ms linear;
+  transition: transform 200ms linear;
+  transition: transform 200ms linear, -webkit-transform 200ms linear;
 }
 
 .multilevelMenu li {

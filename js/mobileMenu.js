@@ -41,7 +41,7 @@
         function openMenu() {
           $('body').toggleClass('bodyFixed');
           setTimeout(function() {
-            $('.close-list').removeClass('close-list');
+            $('.multilevelMenu ul').attr('class', '');
           }, 400);
         }
 
@@ -52,9 +52,7 @@
           if ($('.multilevelMenu').length > 0) {
             $('body').append('<span class="js-swipe"></span>');
             var touchstartX = 0,
-                touchendX = 0,
-                touchstartY = 0,
-                touchendY = 0;
+                touchendX = 0;
             // open menu on tap swipe
             $('.js-swipe, .multilevelMenu').on('touchstart', function(e) {
               touchstartX = e.originalEvent.changedTouches[0].pageX;
@@ -71,10 +69,10 @@
 
             $('.multilevelMenu').on('touchend', function (e) {
               touchendX = e.originalEvent.changedTouches[0].pageX;
-              if (touchendX < touchstartX) {
+              if (touchendX < (touchstartX - 20)) {
                 $('body').removeClass('bodyFixed');
                 setTimeout(function () {
-                  $('.close-list').removeClass('close-list');
+                  $('.multilevelMenu ul').attr('class', '');
                 }, 400);
               }
             });
@@ -131,9 +129,10 @@
                   //view prev level menu to click "back"
                   $('.js-back').click(function () {
                     $(this).closest('ul.close-list').removeClass('close-list');
+                    $(this).closest('ul').addClass('hidden-menu');
                     var that = this;
                     setTimeout(function () {
-                      $(that).closest('ul').removeClass('active-menu');
+                      $(that).closest('ul').removeClass('active-menu hidden-menu');
                     }, 400);
                   });
 

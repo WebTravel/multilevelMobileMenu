@@ -95,7 +95,7 @@ span.toggle {
   top: 0;
   left: 0;
   height: 100%;
-  width: 30px;
+  width: 40px;
   z-index: 6;
   background: transparent;
 }
@@ -166,16 +166,16 @@ span.toggle {
 
 /*Menu-stiles */
 .multilevelMenu {
-    display: block;
+  display: block;
   position: fixed;
   top: 40px;
-    left: 0;
+  left: -300px;
   width: 300px;
   height: 100%;
   background: #fff;
   box-sizing: border-box;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
   -webkit-transition: -webkit-transform 400ms linear;
   transition: -webkit-transform 400ms linear;
   transition: transform 400ms linear;
@@ -191,8 +191,8 @@ span.toggle {
   }
 
 .bodyFixed .multilevelMenu {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
   -webkit-transition: -webkit-transform 400ms linear;
   transition: -webkit-transform 400ms linear;
   transition: transform 400ms linear;
@@ -270,7 +270,7 @@ span.toggle {
   height: 100%;
   width: 35px;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #f09e00;
   z-index: 2;
   display: -webkit-box;

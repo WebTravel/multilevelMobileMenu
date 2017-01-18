@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MultiMenu</title>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/noadaptive.css">
-  <link rel="stylesheet" href="css/mobileMenu.css">
+
   <!--Подключаем плагин-->
-  <script src="js/mobileMenu.js"></script>
+  <link rel="stylesheet" href="css/mobileMenu.css">
+  <script src="js/mobileMenu.min.js"></script>
   <!--Подключаем плагин-->
 
   <!--Меняем стандартные свойства плагина-->
@@ -148,7 +149,7 @@
   <section>
     <h3>Системные требования</h3>
     <ul>
-      <li>Jquery 1.9+</li>
+      <li>Jquery 1.7+</li>
       <li>Android: 4.2.2+</li>
       <li>IOS 7.1+</li>
     </ul>
@@ -159,20 +160,20 @@
     <h3>Список поддерживаемых устройств</h3>
     <p class="switch__button"><span>IOS+</span></p>
     <ol class="switch__content">
-      <li>Iphone 4</li>
+      <li>Iphone 4 (без поддержки swipe)</li>
       <li>Iphone 4S</li>
-      <li>Iphone 5</li>
-      <li>Iphone 5S</li>
-      <li>Iphone 6</li>
-      <li>Iphone 6 plus</li>
+      <li>Iphone 5С</li>
       <li>Iphone 7</li>
+      <li>IPad Air</li>
+
     </ol>
 
     <p class="switch__button"><span>Android+</span></p>
     <ol class="switch__content">
-      <li>Lg Nexus 5 (D820)</li>
-      <li>Lg Nexus 5 (D821)</li>
       <li>HTC Desire</li>
+      <li>Lg Nexus 5 (D821)</li>
+      <li>Lg G2 mini</li>
+      <li>ZTE Blade X3</li>
     </ol>
 
     <p class="switch__button"><span>Windows-Phone+</span></p>
@@ -275,6 +276,18 @@
     </code>
   </div>
 
+  <p class="under bold">Шаг 6: Скрытие основного меню</p>
+  <p>Для исправления "эффекта появления меню при загрузке" необходимо в сss файл прописать скрытие меню на ширине, где меню приобретает мобильный вид.</p>
+  <div class="codearea">
+    <code>
+      <span>@media(max-width: 899px) {</span>
+      <span style="padding-left: 15px;">.menu {</span>
+      <span style="padding-left: 30px;">display: none</span>
+      <span style="padding-left: 15px;">}</span>
+      <span>}</span>
+    </code>
+  </div>
+
   <br />
   <br />
 
@@ -329,11 +342,27 @@
       </code>
     </div>
   </section>
-
-
-
   <br />
+
+  <hr>
   <br />
+  <section>
+    <h3>Список изменений</h3>
+    <ul>
+      <li>version 1.2.1 - исправление бага появления меню при загрузке (18.01.17).</li>
+      <li>version 1.2 - рефакторинг, приведение к ООП стилю (15.01.17).</li>
+      <li>version 1.1.1 - глобальное изменение стилей.</li>
+      <li>version 1.1 - добавление touch событий на раскрытие и закрытие меню.</li>
+      <li>version 1.0.1 - добавление стрелки (arrow) и кнопки "Назад" (back) только после перехода на необходимую ширину.</li>
+      <li>version 1.0 - преобразование всего меню в плагин.</li>
+      <li>version 0.1.3 - сброс всех аттрибутов, кроме class="multilevelMenu" при ширине менее заданной.</li>
+      <li>version 0.1.2 - отображение текста названия раздела вместо кнопки "Назад".</li>
+      <li>version 0.1.1 - рефакторинг, изменение стилей, сброс ненужных классов em.</li>
+      <li>version 0.1 - рефакторинг, изменение стилей, сброс ненужных классов ul, li, a.</li>
+    </ul>
+  </section>
+
+
   </div>
 </div>
 

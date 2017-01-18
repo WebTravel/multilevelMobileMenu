@@ -1,13 +1,3 @@
-//version 0.1 - рефакторинг, изменение стилей, сброс ненужных классов ul, li, a
-//version 0.1.1 - рефакторинг, изменение стилей, сброс ненужных классов em
-//version 0.1.2 - отображение текста названия раздела вместо кнопки "Назад"
-//version 0.1.3 - сброс всех аттрибутов, кроме class="multilevelMenu" при ширине менее 1024px
-//version 1.0 - преобразование всего меню в плагин
-//version 1.0.1 - добавление стрелки (arrow) и кнопки "Назад" (back) только после перехода на необходимую ширину
-//version 1.1 - добавление touch событий. На swipe меню выдвигается
-//version 1.1.1 - глобальное изменение стилей
-//version 1.2 - рефакторинг, приведение к ООП стилю.
-
 ; (function ($, window, document) {
 
   //defaults value
@@ -93,7 +83,6 @@
             //remove attr
              if (!menuEnabled) {
                   menuEnabled = true;
-
                   element.removeAttr('id');
                   element.removeClass();
                   element.addClass('multilevelMenu');
@@ -167,7 +156,6 @@
         });
 
   };
-
 
   $.fn.mobileMenu = function (options) {
     new MultiMenu(this.first(), options);

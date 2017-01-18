@@ -301,4 +301,8 @@ code span em {
     margin-top: 40px;
   }
 
+  .menu {
+    display: none;
+  }
+
 }

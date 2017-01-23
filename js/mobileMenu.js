@@ -4,7 +4,8 @@
   var defaults = {
     'width' : 1024,
     'next' : '<span class="arrow">&rsaquo;</span>',
-    'prev' : '<span class="back-arrow">&lsaquo;</span>'
+    'prev' : '<span class="back-arrow">&lsaquo;</span>',
+    'linkSwitch' : 'false'
   };
 
   function MultiMenu (element, options) {
@@ -79,6 +80,23 @@
 
           var w = window.innerWidth ? window.innerWidth : $(window).width();
 
+          //next level function
+          function nextLevelFunction (e, el) {
+            e.preventDefault();
+            e.stopPropagation();
+            el.parents('ul').addClass('close-list');
+            el.closest('li').children('ul').addClass('active-menu');
+          }
+
+          //add text for prev button function
+          function textPrevButton (str, el) {
+            if (str.length > 0) {
+              str = str.substring(0, str.length - 1);
+            }
+            el.closest('li').find('li.back').text(str);
+            $('.js-back').append(self.options.prev);
+          }
+
           if (w < self.options.width) {
             //remove attr
              if (!menuEnabled) {
@@ -100,20 +118,31 @@
                   //add back-button function
                   element.find('li').find('ul').prepend('<li class="back js-back"></li>');
 
-                  //view next level menu
-                  $(link).on("click", ".js-arrow", function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    $(this).parents('ul').addClass('close-list');
-                    $(this).closest('li').children('ul').addClass('active-menu');
+                  //view next level menu full button
+                  if (self.options.linkSwitch == 'true') {
 
-                    var str = $(this).parents('a').text();
-                    if (str.length > 0) {
-                      str = str.substring(0, str.length - 1);
-                    }
-                    $(this).closest('li').find('li.back').text(str);
-                    $('.js-back').append(self.options.prev);
-                  });
+                    $(link).on("click", function (e) {
+                      if ($(this).next('ul').length > 0) {
+                        nextLevelFunction (e, $(this));
+                      }
+                      //name prev-button text
+                      var str = $(this).text();
+                      textPrevButton (str, $(this));
+                    });
+
+                  } else {
+
+                    //view next level menu on only arrow
+                    $(link).on("click", ".js-arrow", function (e) {
+                      nextLevelFunction (e, $(this));
+                      //name prev-button text
+                      var str = $(this).parents('a').text();
+                      textPrevButton (str, $(this));
+                    });
+
+                  }
+
+
 
                   //view prev level menu to click "back"
                   $('.js-back').click(function () {

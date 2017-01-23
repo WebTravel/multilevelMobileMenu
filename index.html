@@ -9,7 +9,7 @@
 
   <!--Подключаем плагин-->
   <link rel="stylesheet" href="css/mobileMenu.css">
-  <script src="js/mobileMenu.min.js"></script>
+  <script src="js/mobileMenu.js"></script>
   <!--Подключаем плагин-->
 
   <!--Меняем стандартные свойства плагина-->
@@ -18,7 +18,8 @@
       $('.menu').mobileMenu({
           'width': 900,
           'next': '<div class="next-arrow next-button">&rsaquo;</div>',
-          'prev': '<div class="back-arrow back-button">&lsaquo;</div>'
+          'prev': '<div class="back-arrow back-button">&lsaquo;</div>',
+          'linkSwitch': 'false'
       });
     });
   </script>
@@ -139,7 +140,7 @@
 
     <p>Основные возможности меню</p>
     <ol>
-      <li>Поддержка бесконечного числа уровня вложенности</li>
+      <li>Поддержка бесконечного числа уровней вложенности</li>
       <li>Поддержка swipe-раскрытия и swipe-закрытия меню</li>
       <li>Адаптивность стилей</li>
       <li>Легкая и быстрая настройка</li>
@@ -192,7 +193,8 @@
 
   <p class="under bold">Шаг 1: Подключение jQuery.</p>
   <p>
-    Для установки необходимо подключить jquery версии 1.9 и выше. Подключение описано ниже. Внимание! Подключаем только один вариант!</p>
+    Для установки необходимо подключить jquery версии 1.7 и выше. Подключение описано ниже. <br />
+    Внимание! Подключаем только один вариант!</p>
   <div class="codearea">
     <p>Подключение jquery последней версии</p>
     <code>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;</code>
@@ -206,6 +208,7 @@
   <br />
 
   <p class="under bold">Шаг 2: Подключение ресурсов</p>
+  <p>Подключаем следующие ресурсы плагина:</p>
   <div class="codearea">
     <p>Javascript file</p>
     <code>&lt;script src="/js/mobileMenu.min.js"&gt;&lt;/script&gt;</code>

@@ -5,7 +5,9 @@
     'width' : 1024,
     'next' : '<span class="arrow">&rsaquo;</span>',
     'prev' : '<span class="back-arrow">&lsaquo;</span>',
-    'linkSwitch' : 'false'
+    'linkSwitch' : false,
+    'showParent': true,
+    'backButtonText': 'Назад'
   };
 
   function MultiMenu (element, options) {
@@ -24,7 +26,6 @@
           attrClass = element.attr('class'),
           menuEnabled = false;
 
-
         //add Overlay
         $('body').append('<div class="multilevelOverlay js-overlay"></div>');
 
@@ -35,7 +36,6 @@
             $('.multilevelMenu ul').attr('class', '');
           }, 400);
         }
-
 
         //swipe function for open menu
         function SwipeOpenMenu() {
@@ -67,7 +67,6 @@
                 }, 400);
               }
             });
-
           } else {
             return false;
           }
@@ -119,7 +118,7 @@
                   element.find('li').find('ul').prepend('<li class="back js-back"></li>');
 
                   //view next level menu full button
-                  if (self.options.linkSwitch == 'true') {
+                  if (self.options.linkSwitch == true) {
 
                     $(link).on("click", function (e) {
                       if ($(this).next('ul').length > 0) {
@@ -141,8 +140,6 @@
                     });
 
                   }
-
-
 
                   //view prev level menu to click "back"
                   $('.js-back').click(function () {

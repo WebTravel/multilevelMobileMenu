@@ -68,10 +68,11 @@ ol, ul {
 
 .header__top, .header__top .inner {
   height: 40px;
-  z-index: 22;
+  z-index: 28;
   width: 100%;
   position: relative;
   background: #fff;
+  border:1px solid #dedede
 }
 
 .header__top {
@@ -99,7 +100,7 @@ ol, ul {
   background: #f7eede;
 }
 
-.menu .inner > ul {
+.menu  > ul {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -108,7 +109,7 @@ ol, ul {
   padding-left: 0;
 }
 
-.menu .inner > ul ul {
+.menu > ul ul {
   display: none;
   background: #f7eede;
   min-width: 130px;
@@ -116,7 +117,7 @@ ol, ul {
   padding-left: 0;
 }
 
-.menu .inner > ul > li a {
+.menu > ul > li a {
   display: block;
   color: #f09e00;
   text-decoration: none;
@@ -128,29 +129,30 @@ ol, ul {
   box-sizing: border-box;
 }
 
-.menu .inner > ul ul a {
+.menu > ul ul a {
   text-decoration: none;
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.25;
+  white-space: nowrap
 }
 
-.menu .inner > ul ul a:hover {
+.menu > ul ul a:hover {
   opacity: 0.8;
 }
 
-.menu .inner > ul > li {
+.menu > ul > li {
   border: 1px solid transparent;
   border-bottom: none;
   position: relative;
 }
 
-.menu .inner > ul > li:hover {
+.menu > ul > li:hover {
   border: 1px solid #f09e00;
   border-bottom: none;
 }
 
-.menu .inner > ul > li:hover:after {
+.menu > ul > li:hover:after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -161,7 +163,7 @@ ol, ul {
   display: block;
 }
 
-.menu .inner > ul > li:hover > ul {
+.menu > ul > li:hover > ul {
   display: block;
   position: absolute;
   border: 1px solid #f09e00;
@@ -170,11 +172,11 @@ ol, ul {
 }
 
 
-.menu .inner > ul > li > ul > li {
+.menu > ul > li > ul > li {
   position: relative;
 }
 
-.menu .inner > ul > li > ul > li:hover > ul {
+.menu > ul > li > ul > li:hover > ul {
   display: block;
   position: absolute;
   border: 1px solid #f09e00;

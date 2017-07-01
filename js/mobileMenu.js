@@ -82,7 +82,7 @@
             //close menu left-swipe
             $('.multilevelMenu').on('touchend', function (e) {
               touchendX = e.originalEvent.changedTouches[0].pageX;
-              if (touchendX < (touchstartX - 20)) {
+              if (touchendX < (touchstartX - 30)) {
                 $('body').removeClass('bodyFixed');
                 setTimeout(function () {
                   $('.multilevelMenu ul').attr('class', '');
@@ -111,7 +111,7 @@
             e.preventDefault();
             e.stopPropagation();
             var elem = el.closest('li').children('ul'),
-                elemHeight = elem.innerHeight();
+                elemHeight = elem.innerHeight() + 15;
             el.parents('ul').addClass('close-list').height(elemHeight);
             elem.addClass('active-menu').height(elemHeight);
           }
@@ -121,8 +121,7 @@
             if (str.length > 0) {
               str = str.substring(0, str.length - 1);
             }
-            el.closest('li').find('li.back').text(str);
-            $('.js-back').append(self.options.prev);
+            el.closest('li').find('li.back').text(str).append(self.options.prev);
           }
 
           if (w < self.options.width) {

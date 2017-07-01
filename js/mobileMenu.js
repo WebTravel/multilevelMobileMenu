@@ -22,9 +22,41 @@
 
         var self = this,
           element = this.element,
-          attrId = element.attr('id'),
-          attrClass = element.attr('class'),
+          elementAttrId = element.attr('id'),
+          elementAttrClass = element.attr('class'),
+          arrClassList = [],
+          attrIdList = [],
+          arrClassItem = [],
+          arrClassLink = [],
+          childrenList = element.find('ul'),
+          childrenItem = element.find('li'),
+          childrenLink = element.find('a'),
           menuEnabled = false;
+
+        //Parse Attr ul-elements
+        function addAttrInArr(el, attribute, arr) {
+          el.each(function(indx) {
+            if($(this).attr(attribute) != undefined) {
+              arr.push($(this).attr(attribute));
+            } else {
+              arr.push('');
+            }
+          });
+        }
+
+        addAttrInArr(childrenList, 'class', arrClassList);
+        addAttrInArr(childrenList, 'id', attrIdList);
+
+        addAttrInArr(childrenItem, 'class', arrClassItem);
+        addAttrInArr(childrenLink, 'class', arrClassLink);
+
+        //OutParse Attr ul-elements
+        function outAttrArr(el, attr, arr) {
+          el.each(function(indx) {
+            var attrValue = arr[indx];
+            $(this).attr(attr, attrValue)
+          });
+        }
 
         //add Overlay
         $('body').append('<div class="multilevelOverlay js-overlay"></div>');
@@ -103,6 +135,13 @@
                   element.removeAttr('id');
                   element.removeClass();
                   element.addClass('multilevelMenu');
+
+                  childrenList.removeClass();
+                  childrenList.removeAttr('id');
+
+                  childrenItem.removeClass();
+                  childrenLink.removeClass();
+
                   //call swipe function
                   SwipeOpenMenu();
                   //add switch-button for children ul
@@ -156,13 +195,19 @@
              if (menuEnabled) {
                 //return attr
                 menuEnabled = false;
-                element.attr('id', attrId);
-                element.attr('class', attrClass);
+                element.attr('id', elementAttrId);
+                element.attr('class', elementAttrClass);
+
+                outAttrArr(childrenList, 'class', arrClassList);     
+                outAttrArr(childrenList, 'id', attrIdList);   
+
+                outAttrArr(childrenItem, 'class', arrClassItem);
+                outAttrArr(childrenLink, 'class', arrClassLink);    
+                         
                 $('.js-arrow, .js-back, .js-swipe').detach();
               }
 
               $('body').removeClass('bodyFixed'); //remove fixedClass to body
-              element.find('ul').removeClass();
             }
         }
 

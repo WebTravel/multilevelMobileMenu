@@ -171,7 +171,6 @@ ol, ul {
   left: -1px;
 }
 
-
 .menu > ul > li > ul > li {
   position: relative;
 }
@@ -185,14 +184,19 @@ ol, ul {
   background: #f7eede;
 }
 
+.menu > ul > li > ul > li > ul ul {
+  display: none;
+}
 
+.menu > ul > li > ul > li:hover > ul > ul {
+  display: block;
+}
 
 /*Style RESET to CONTENT*/
 
 section {
   margin-bottom: 1em;
 }
-
 
 .main-header-title {
   font-weight: bold;
@@ -286,7 +290,6 @@ code span em {
 .bold {
   font-weight: bold;
 }
-
 
 
 @media(max-width: 899px) {

@@ -44,8 +44,8 @@ span.toggle {
 
 .toggle > span em {
   display: block;
-  -webkit-transition: 800ms ease all;
-  transition: 800ms ease all;
+  -webkit-transition: 400ms ease all;
+  transition: 400ms ease all;
   position: absolute;
   left: 0;
   width: 100%;
@@ -64,8 +64,8 @@ span.toggle {
 .bodyFixed .toggle > span em:first-child, .bodyFixed .toggle > span em:last-child {
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
-  -webkit-transition: 800ms ease all;
-  transition: 800ms ease all;
+  -webkit-transition: 400ms ease all;
+  transition: 400ms ease all;
   top: 10px;
 }
 
@@ -154,8 +154,8 @@ span.toggle {
   }
 }
 .bodyFixed .js-toggle {
-  -webkit-animation: animate 1500ms ease;
-  animation: animate 1500ms ease;
+  -webkit-animation: animate 750ms ease;
+  animation: animate 750ms ease;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
@@ -177,10 +177,10 @@ span.toggle {
   box-sizing: border-box;
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  -webkit-transition: -webkit-transform 400ms linear;
-  transition: -webkit-transform 400ms linear;
-  transition: transform 400ms linear;
-  transition: transform 400ms linear, -webkit-transform 400ms linear;
+  -webkit-transition: -webkit-transform 100ms linear;
+  transition: -webkit-transform 100ms linear;
+  transition: transform 100ms linear, -webkit-transform 100ms linear;
+  transition: transform 100ms linear;
   will-change: transform;
   z-index: 23;
   overflow-x: hidden;
@@ -194,10 +194,10 @@ span.toggle {
 .bodyFixed .multilevelMenu {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-transition: -webkit-transform 400ms linear;
-  transition: -webkit-transform 400ms linear;
-  transition: transform 400ms linear;
-  transition: transform 400ms linear, -webkit-transform 400ms linear;
+  -webkit-transition: -webkit-transform 100ms linear;
+  transition: -webkit-transform 100ms linear;
+  transition: transform 100ms linear, -webkit-transform 100ms linear;
+  transition: transform 100ms linear;
 }
 
 .multilevelMenu ul {
@@ -205,14 +205,13 @@ span.toggle {
   padding: 0;
   margin: 0;
   width: 300px;
-  height: 100%;
   position: relative;
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  -webkit-transition: -webkit-transform 200ms linear;
-  transition: -webkit-transform 200ms linear;
-  transition: transform 200ms linear;
-  transition: transform 200ms linear, -webkit-transform 200ms linear;
+  -webkit-transition: -webkit-transform 100ms linear;
+  transition: -webkit-transform 100ms linear;
+  transition: transform 100ms linear, -webkit-transform 100ms linear;
+  transition: transform 100ms linear;
   overflow: hidden;
 }
 
@@ -230,8 +229,6 @@ span.toggle {
   z-index: 3;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  min-height: 100%;
-  overflow-y: auto 
 }
 
 .multilevelMenu ul ul.hidden-menu {

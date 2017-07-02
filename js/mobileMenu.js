@@ -32,7 +32,7 @@
           childrenLink = element.find('a'),
           menuEnabled = false;
 
-        //Parse Attr ul-elements
+        //Parse Attr menuElements
         function addAttrInArr(el, attribute, arr) {
           el.each(function(indx) {
             if($(this).attr(attribute) != undefined) {
@@ -43,7 +43,7 @@
           });
         }
 
-        //OutParse Attr ul-elements
+        //OutParse Attr menuElements
         function outAttrArr(el, attr, arr) {
           el.each(function(indx) {
             var attrValue = arr[indx];
@@ -76,6 +76,7 @@
               if (touchendX > touchstartX) {
                 //call animate-menu function
                 openMenu();
+                element.find('ul').attr('style', '');
               }
             });
 

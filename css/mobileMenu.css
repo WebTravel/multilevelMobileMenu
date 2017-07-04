@@ -1,6 +1,58 @@
+@font-face {
+  font-family: 'multimenu-icons';
+  src: url('../fonts/multimenu-icons.eot?14173033');
+  src: url('../fonts/multimenu-icons.eot?14173033#iefix') format('embedded-opentype'),
+       url('../fonts/multimenu-icons.woff2?14173033') format('woff2'),
+       url('../font/multimenu-icons.woff?14173033') format('woff'),
+       url('../fonts/multimenu-icons.ttf?14173033') format('truetype'),
+       url('../fonts/multimenu-icons.svg?14173033#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: 'multimenu-icons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-right-open:before {content: '\e800';}
+.icon-right-big:before {content: '\e801';}
+.icon-right-hand:before {content: '\e802';}
+.icon-left-open:before {content: '\e803';}
+.icon-left-big:before {content: '\e804';}
+.icon-left-hand:before {content: '\e805';}
+.icon-th-large:before {content: '\e806';}
+.icon-th:before {content: '\e807';}
+.icon-th-1:before {content: '\e808';}
+.icon-th-list-1:before {content: '\e809';}
+.icon-cancel:before {content: '\e80a';}
+.icon-cancel-1:before {content: '\e80b';}
+.icon-cancel-2:before {content: '\e80c';}
+.icon-th-list:before {content: '\f009';}
+.icon-left-circled:before {content: '\f0a8';}
+.icon-right-circled:before {content: '\f0a9';}
+.icon-menu:before {content: '\f0c9';}
+.icon-angle-double-left:before {content: '\f100';}
+.icon-angle-double-right:before {content: '\f101';}
+.icon-angle-left:before {content: '\f104';}
+.icon-angle-right:before {content: '\f105';}
+.icon-angle-circled-left:before {content: '\f137';}
+.icon-angle-circled-right:before {content: '\f138';}
+.icon-left:before {content: '\f177';}
+.icon-right:before {content: '\f178';}
 
 .multilevelOverlay {
   max-height: 0;
@@ -13,8 +65,9 @@
   cursor: pointer;
   z-index: 21;
   position: fixed;
-  top: 0;
+  bottom: 0;
   right: 0;
+  top: auto;
   max-height: 100%;
   height: 100%;
   width: 100%;
@@ -31,67 +84,13 @@
 }
 
 /*Toogle main-style */
-span.toggle {
-  height: 25px;
-  width: 30px;
+span.multimenuToggle {
   display: block;
   position: absolute;
   left: 20px;
-  top: 8px;
+  top: 6px;
   cursor: pointer;
-}
-
-.toggle > span {
-  width: 100%;
-  height: 100%;
-}
-
-.toggle > span em {
-  display: block;
-  -webkit-transition: 400ms ease all;
-  transition: 400ms ease all;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  top: 10px;
-  background: #f09e00;
-}
-.toggle > span em:first-child {
-  top: 0;
-}
-.toggle > span em:last-child {
-  top: 20px;
-}
-
-/*Toogle animate-style */
-.bodyFixed .toggle > span em:first-child, .bodyFixed .toggle > span em:last-child {
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-  -webkit-transition: 400ms ease all;
-  transition: 400ms ease all;
-  top: 10px;
-}
-
-.bodyFixed .toggle > span em:last-child {
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-}
-
-.bodyFixed .toggle > span em {
-  position: absolute;
-  top: 10px;
-}
-.bodyFixed .toggle > span em:last-child {
-  top: 10px;
-}
-
-.bodyFixed .toggle > span em:nth-child(2) {
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-  opacity: 0;
-  -webkit-transition: 400ms ease all;
-  transition: 400ms ease all;
+  font-size: 2rem
 }
 
 .js-swipe {
@@ -104,75 +103,12 @@ span.toggle {
   background: transparent;
 }
 
-/*Animate */
-@-webkit-keyframes animate {
-  15% {
-    -webkit-transform: translateX(3px);
-    transform: translateX(3px);
-  }
-  30% {
-    -webkit-transform: translateX(-3px);
-    transform: translateX(-3px);
-  }
-  50% {
-    -webkit-transform: translateX(2px);
-    transform: translateX(2px);
-  }
-  65% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px);
-  }
-  80% {
-    -webkit-transform: translateX(2px);
-    transform: translateX(2px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@keyframes animate {
-  15% {
-    -webkit-transform: translateX(3px);
-    transform: translateX(3px);
-  }
-  30% {
-    -webkit-transform: translateX(-3px);
-    transform: translateX(-3px);
-  }
-  50% {
-    -webkit-transform: translateX(2px);
-    transform: translateX(2px);
-  }
-  65% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px);
-  }
-  80% {
-    -webkit-transform: translateX(2px);
-    transform: translateX(2px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-.bodyFixed .js-toggle {
-  -webkit-animation: animate 750ms ease;
-  animation: animate 750ms ease;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-}
-
-/*Animate */
-
-/*Toogle end-styles */
-
 /*Menu-stiles */
 .multilevelMenu {
   display: block;
   position: fixed;
-  top: 0;
+  top: auto;
+  bottom: 0;
   padding-top: 40px;
   left: -300px;
   width: 300px;
@@ -266,8 +202,7 @@ span.toggle {
   height: 100%;
   width: 35px;
   cursor: pointer;
-  font-size: 1.75rem;
-  color: #f09e00;
+  font-size: 1.25rem;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;

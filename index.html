@@ -17,9 +17,12 @@
     $( document ).ready(function() {
       $('.menu').mobileMenu({
           'width': 900,
-          'next': '<div class="next-arrow next-button">&rsaquo;</div>',
-          'prev': '<div class="back-arrow back-button">&lsaquo;</div>',
-          'linkSwitch': true
+          'next': '<div class="next-arrow next-button"></div>',
+          'prev': '<div class="back-arrow back-button"></div>',
+          'linkSwitch': true,
+          'nextButonTheme' : 'right',
+          'prevButonTheme' : 'left',
+          'openButonTheme' : 'th-list'
       });
     });
   </script>
@@ -31,14 +34,8 @@
 <header>
   <div class="header__top">
     <div class="inner">
-          <span class="toggle js-toggle">
-            <span>
-              <em></em>
-              <em></em>
-              <em></em>
-            </span>
-          </span>
-      </div>
+      <span class="multimenuToggle"></span>
+    </div>
   </div>
 </header>
 <div class="inner">

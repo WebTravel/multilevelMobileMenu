@@ -3,10 +3,12 @@
   //defaults value
   var defaults = {
     'width' : 1024,
-    'next' : '<span class="arrow">&rsaquo;</span>',
+    'next' : '<span class="arrow"></span>',
     'prev' : '<span class="back-arrow">&lsaquo;</span>',
     'linkSwitch' : false,
-    'showParent': true
+    'openButonTheme' : 'menu',
+    'nextButonTheme' : 'angle-right',
+    'prevButonTheme' : 'angle-left'
   };
 
   function MultiMenu (element, options) {
@@ -30,7 +32,14 @@
           childrenList = element.find('ul'),
           childrenItem = element.find('li'),
           childrenLink = element.find('a'),
-          menuEnabled = false;
+          menuEnabled = false,
+          prx = 'icon-',
+          openButtonClass = prx + self.options.openButonTheme,
+          nextButtonClass = prx + self.options.nextButonTheme,
+          prevButtonClass = prx + self.options.prevButonTheme;
+          
+        //addopenButtonTheme
+        $('.multimenuToggle').addClass(openButtonClass);
 
         //Parse Attr menuElements
         function addAttrInArr(el, attribute, arr) {
@@ -119,10 +128,8 @@
 
           //add text for prev button function
           function textPrevButton (str, el) {
-            if (str.length > 0) {
-              str = str.substring(0, str.length - 1);
-            }
             el.closest('li').find('li.back').text(str).append(self.options.prev);
+            return el.closest('li').find('li.back').find('> *').addClass('js-prev ' + prevButtonClass);
           }
 
           if (w < self.options.width) {
@@ -146,7 +153,7 @@
                     if($(this).parent('li').find('ul').length > 0) {
                       out = self.options.next;
                     }
-                    return $(out).addClass('js-arrow');
+                    return $(out).addClass('js-arrow ' + nextButtonClass);
                   });
                   //add back-button function
                   element.find('li').find('ul').prepend('<li class="back js-back">Назад</li>');
@@ -217,7 +224,7 @@
         });
 
         //animate menu function Call
-        $('.js-toggle').add($('.js-overlay')).on("click", function () {
+        $('.multimenuToggle').add($('.js-overlay')).on("click", function () {
             //call animate-menu function
             openMenu();
             element.find('ul').attr('style', '');

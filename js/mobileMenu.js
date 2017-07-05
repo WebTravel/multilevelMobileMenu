@@ -8,7 +8,8 @@
     'linkSwitch' : false,
     'openButonTheme' : 'menu',
     'nextButonTheme' : 'angle-right',
-    'prevButonTheme' : 'angle-left'
+    'prevButonTheme' : 'angle-left',
+    'colorTheme' : ''
   };
 
   function MultiMenu (element, options) {
@@ -38,8 +39,13 @@
           nextButtonClass = prx + self.options.nextButonTheme,
           prevButtonClass = prx + self.options.prevButonTheme;
           
-        //addopenButtonTheme
-        $('.multimenuToggle').addClass(openButtonClass);
+        //addColor function
+        function addColor(element) {
+          if(self.options.colorTheme != '') {
+            console.log(element);
+            $(element).css({'color' : self.options.colorTheme})
+          }
+        }
 
         //Parse Attr menuElements
         function addAttrInArr(el, attribute, arr) {
@@ -109,6 +115,10 @@
         addAttrInArr(childrenItem, 'class', arrClassItem);
         addAttrInArr(childrenLink, 'class', arrClassLink);
 
+        //addopenButtonTheme
+        $('.multimenuToggle').addClass(openButtonClass);
+        addColor('.multimenuToggle');
+
         //add Overlay
         $('body').append('<div class="multilevelOverlay js-overlay"></div>');
 
@@ -128,7 +138,7 @@
 
           //add text for prev button function
           function textPrevButton (str, el) {
-            el.closest('li').find('li.back').text(str).append(self.options.prev);
+            el.closest('li').find('li.back').text(str).prepend(self.options.prev);
             return el.closest('li').find('li.back').find('> *').addClass('js-prev ' + prevButtonClass);
           }
 
@@ -153,6 +163,7 @@
                     if($(this).parent('li').find('ul').length > 0) {
                       out = self.options.next;
                     }
+                    addColor('.js-arrow ');
                     return $(out).addClass('js-arrow ' + nextButtonClass);
                   });
                   //add back-button function
@@ -167,6 +178,7 @@
                       //name prev-button text
                       var str = $(this).text();
                       textPrevButton (str, $(this));
+                      addColor('.js-prev');
                     });
 
                   } else {
@@ -176,6 +188,7 @@
                       //name prev-button text
                       var str = $(this).parents('a').text();
                       textPrevButton (str, $(this));
+                      addColor('.js-prev');
                     });
                   }
 
@@ -229,7 +242,9 @@
             openMenu();
             element.find('ul').attr('style', '');
         });
+
   };
+
 
   $.fn.mobileMenu = function (options) {
     new MultiMenu(this.first(), options);

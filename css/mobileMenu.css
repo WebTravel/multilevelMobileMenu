@@ -217,11 +217,7 @@ span.multimenuToggle {
 
 .multilevelMenu .js-back {
   list-style-type: none;
-  padding: 7px 20px 7px 35px;
-  text-align: right;
-  color: #fff;
-  background-image: -webkit-linear-gradient(bottom, #ffc252 0%, #f09e00 100%);
-  background-image: linear-gradient(to top, #ffc252 0%, #f09e00 100%);
+  padding: 7px 15px;
   cursor: pointer;
   line-height: 1.15;
   position: relative;
@@ -229,20 +225,8 @@ span.multimenuToggle {
 }
 
 .multilevelMenu .back > * {
-  position: absolute;
-  left: 15px;
-  top: 0;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-align-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: inline-block;
+  vertical-align: middle;
   margin-right: 10px;
   font-size: 1.5rem;
 }

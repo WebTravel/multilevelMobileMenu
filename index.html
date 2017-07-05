@@ -9,7 +9,7 @@
 
   <!--Подключаем плагин-->
   <link rel="stylesheet" href="css/mobileMenu.css">
-  <script src="js/mobileMenu.js"></script>
+  <script src="js/mobileMenu.min.js"></script>
   <!--Подключаем плагин-->
 
   <!--Меняем стандартные свойства плагина-->
@@ -22,7 +22,8 @@
           'linkSwitch': true,
           'nextButonTheme' : 'right',
           'prevButonTheme' : 'left',
-          'openButonTheme' : 'th-list'
+          'openButonTheme' : 'th-list',
+          'colorTheme' : '#f09e00'
       });
     });
   </script>
@@ -39,7 +40,7 @@
   </div>
 </header>
 <div class="inner">
-<nav class="menu one two" id="mainmenu">
+<nav class="menu one two" id="mainmenu" data-multimenu="900">
   <ul class="menu flex jcsb" id="main-menu">
     <li><a href="#">Каталог товаров</a>
       <ul class="second__level">

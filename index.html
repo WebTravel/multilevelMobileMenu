@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MultiMenu</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <link rel="stylesheet" href="css/noadaptive.css">
+  <link rel="stylesheet" href="noadaptive.css">
 
   <!--Подключаем плагин-->
-  <link rel="stylesheet" href="css/mobileMenu.css">
-  <script src="js/mobileMenu.min.js"></script>
+  <link rel="stylesheet" href="dist/css/mobileMenu.css">
+  <script src="dist/js/mobileMenu.min.js"></script>
   <!--Подключаем плагин-->
+
+  <!--Подключаем prismJs-->
+  <link rel="stylesheet" href="prism.min.css">
+  <script src="prism.min.js"></script>
+  <!--Подключаем prismJs-->
 
   <!--Меняем стандартные свойства плагина-->
   <script>
@@ -234,7 +239,6 @@
       <li>Iphone 5С</li>
       <li>Iphone 7</li>
       <li>IPad Air</li>
-
     </ol>
 
     <p class="switch__button"><span>Android+</span></p>
@@ -259,162 +263,159 @@
     </hgroup>
   </section>
 
+<section class="step__section">
   <p class="under bold">Шаг 1: Подключение jQuery.</p>
   <p>
-    Для установки необходимо подключить jquery версии 1.7 и выше. Подключение описано ниже. <br />
-    Внимание! Подключаем только один вариант!</p>
-  <div class="codearea">
-    <p>Подключение jquery последней версии</p>
-    <code>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;</code>
-  </div>
+    Для установки необходимо подключить jquery версии 1.7 и выше. Подключение описано ниже.
+  </p>
 
-  <div class="codearea">
-    <p>Подключение jquery 1.11.0</p>
-    <code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"&gt;&lt;/script&gt;</code>
-  </div>
+<pre class="language-html"><code>/*Подключение jquery последней версии*/
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script></code></pre>
+</section>
 
-  <br />
 
-  <p class="under bold">Шаг 2: Подключение ресурсов</p>
-  <p>Подключаем следующие ресурсы плагина:</p>
-  <div class="codearea">
-    <p>Javascript file</p>
-    <code>&lt;script src="/js/mobileMenu.min.js"&gt;&lt;/script&gt;</code>
-  </div>
+<section class="step__section">
+<p class="under bold">Шаг 2: Подключение ресурсов плагина</p>
+<pre class="language-html"><code>/*CSS file*/
+&lt;link href="/css/mobileMenu.css" rel="stylesheet" /&gt;
 
-  <div class="codearea">
-    <p>CSS file</p>
-    <code>&lt;link href="/css/mobileMenu.css" rel="stylesheet" /&gt;</code>
-  </div>
+/*Javascript file*/
+&lt;script src="/js/mobileMenu.min.js"&gt;&lt;/script&gt;
+</code></pre>
+</section>
 
-  <p class="under bold">Шаг 3: Создание Html-структуры меню</p>
-  <p>Меню должно состоять из вложенных друг в друга списков, составленных через элементы "&lt;ul&gt;&lt;/ul&gt;,&nbsp;&lt;li&gt;&lt;/li&gt;,&nbsp;&lt;a href=""&gt;&lt;/a&gt;".
-  Пример правильной структуры:</p>
+<section class="step__section">
+<p class="under bold">Шаг 3: Создание Html-структуры меню</p>
+<p>Меню должно состоять из вложенных друг в друга списков, составленных через элементы: ul, li, a</p>
+<pre class="language-html"><code>/*Пример правильной структуры*/
+&lt;nav class="menu"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Раздел 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;Раздел 2&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Подраздел 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href="#"&gt;Подраздел 2&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Продукт 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Продукт 2&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Подраздел 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Подраздел 4&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Раздел 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Раздел 4&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+</section>
 
-  <div class="codearea">
-    <code>
-      <span>&lt;nav class="menu"&gt;</span>
-      <br />
-      <span>&lt;ul&gt;</span>
-      <span style="padding-left: 15px;">&lt;li&gt;&lt;a href="#"&gt;Одежда&lt;/a&gt;</span>
-      <span style="padding-left: 30px;">&lt;ul&gt;</span>
-      <span style="padding-left: 45px;">&lt;li&gt;&lt;a href="#"&gt;Кофточки&lt;/a&gt;&lt;li&gt;</span>
-      <span style="padding-left: 60px;">&lt;ul&gt;</span>
-      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Цветные&lt;/a&gt;&lt;/li&gt;</span>
-      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Полосатые&lt;/a&gt;&lt;/li&gt;</span>
-      <span style="padding-left: 60px;">&lt;/ul&gt;</span>
-      <span style="padding-left: 45px;">&lt;/li&gt;</span>
-      <span style="padding-left: 45px;">&lt;li&gt;&lt;a href="#"&gt;Платья&lt;/a&gt;</span>
-      <span style="padding-left: 60px;">&lt;ul&gt;</span>
-      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Летние&lt;/a&gt;&lt;/li&gt;</span>
-      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Выпускные&lt;/a&gt;&lt;/li&gt;</span>
-      <span style="padding-left: 75px;">&lt;li&gt;&lt;a href="#"&gt;Свадебные&lt;/a&gt;&lt;/li&gt;</span>
-      <span style="padding-left: 60px;">&lt;/ul&gt;</span>
-      <span style="padding-left: 45px;">&lt;/li&gt;</span>
-      <span style="padding-left: 45px;">&lt;li&gt;&lt;a href="#"&gt;Современные&lt;/a&gt;&lt;/li&gt;</span>
-      <span style="padding-left: 30px;">&lt;/ul&gt;</span>
-      <span style="padding-left:15px;">&lt;/li&gt;</span>
-      <span style="padding-left: 15px;">&lt;li&gt;&lt;a href="#"&gt;Обувь&lt;/a&gt;&lt;/li&gt;</span>
-      <span style="padding-left: 15px;">&lt;li&gt;&lt;a href="#"&gt;Зонты&lt;/a&gt;&lt;/li&gt;</span>
-      <span style="padding-left: 15px;">&lt;li&gt;&lt;a href="#"&gt;Шарфы и перчатки&lt;/a&gt;&lt;/li&gt;</span>
-      <span>&lt;/ul&gt;</span>
-      <br />
-      <span>&lt;/nav&gt;</span>
-    </code>
-  </div>
-
+<section class="step__section">
   <p class="under bold">Шаг 4: Создание Html-структуры кнопки "Гамбургер"</p>
-  <p>Для корректной работы меню необходимо создать сруктуру кнопки "Гамбургер" следующего вида:</p>
-  <div class="codearea">
-    <code>
-      <span>&lt;span class="toggle js-toggle"&gt;</span>
-      <span style="padding-left: 15px;">&lt;span&gt;</span>
-      <span style="padding-left: 30px;">&lt;em&gt;&lt;/em&gt;</span>
-      <span style="padding-left: 30px;">&lt;em&gt;&lt;/em&gt;</span>
-      <span style="padding-left: 30px;">&lt;em&gt;&lt;/em&gt;</span>
-      <span style="padding-left: 15px;">&lt;/span&gt;</span>
-      <span>&lt;/span&gt;</span>
-    </code>
-  </div>
+  <p>Для корректной работы меню необходимо создать сруктуру кнопки "Гамбургер" в любое место страницы:</p>
+  <pre class="language-html"><code>&lt;span class="multimenuToggle"&gt;&lt;/span&gt;
+</code></pre>
+</section>
 
+<section class="step__section">
   <p class="under bold">Шаг 5: Вызов плагина</p>
   <p>Вызов плагина осуществляется при помощи применения метода ".mobileMenu()" на обертку общего списка. Ниже представлен пример вызова плагина.</p>
-  <div class="codearea">
-    <code>
-      <span>$( document ).ready(function() {</span>
-      <span style="padding-left: 15px;">$('.menu').mobileMenu();</span>
-      <span>});</span>
-    </code>
-  </div>
+<pre class="language-javascript"><code>$( document ).ready(function() {
+  $('.menu').mobileMenu();
+});
+</code></pre>
+</section>
 
+<section class="step__section">
   <p class="under bold">Шаг 6: Скрытие основного меню</p>
   <p>Для исправления "эффекта появления меню при загрузке" необходимо в сss файл прописать скрытие меню на ширине, где меню приобретает мобильный вид.</p>
-  <div class="codearea">
-    <code>
-      <span>@media(max-width: 899px) {</span>
-      <span style="padding-left: 15px;">.menu {</span>
-      <span style="padding-left: 30px;">display: none</span>
-      <span style="padding-left: 15px;">}</span>
-      <span>}</span>
-    </code>
-  </div>
-
-  <br />
+<pre class="language-css"><code>@media(max-width: 899px) {
+  .menu {display: none;}
+}</code></pre>
+</section>
   <br />
 
   <h3>Параметры плагина</h3>
   <section>
     <p class="bold">width</p>
     <p>Значение ширины экрана в пикселях, меньше которого меню приобретет мобильный вид</p>
-    <div class="codearea">
-      <code>
-        <span>Значение по умолчанию: <em>1024</em></span>
-        <span>Возможные значения: <em>Целые числа</em></span>
-      </code>
-    </div>
+<pre class="language-javascript"><code>Значение по умолчанию: 1024
+Возможные значения: Целые числа</code></pre>
   </section>
 
   <section>
     <p class="bold">next</p>
     <p>Html-код кнопки показа следующего уровня меню</p>
-    <div class="codearea">
-      <code>
-        <span>Значение по умолчанию: <em>&lt;span class="arrow"&gt;&rsaquo;&lt;/span&gt;</em></span>
-        <span>Возможные значения: <em>Любой html-селектор</em></span>
-      </code>
-    </div>
-  </section>
+<pre class="language-html"><code>Значение по умолчанию: &lt;span class="arrow"&gt;&lt;/span&gt;
+Возможные значения: Любой html-селектор</code></pre>
+</section>
 
-  <section>
-    <p class="bold">prev</p>
-    <p>Html-код стрелки показа предыдущего уровня меню</p>
-    <div class="codearea">
-      <code>
-        <span>Значение по умолчанию: <em>&lt;span class="back-arrow"&gt;&rsaquo;&lt;/span&gt;</em></span>
-        <span>Возможные значения: <em>Любой html-селектор</em></span>
-      </code>
-    </div>
-  </section>
+<section>
+<p class="bold">prev</p>
+<p>Html-код стрелки показа предыдущего уровня меню</p>
+<pre class="language-html"><code>Значение по умолчанию: &lt;span class="back-arrow"&gt;&lt;/span&gt;
+Возможные значения: Любой html-селектор</code></pre>
+</section>
+
+<section>
+<p class="bold">linkSwitch</p>
+<p>Разрешает осуществлять навигацию в меню по самой ссылке, а не только по стрелке</p>
+<pre class="language-javascript"><code>Значение по умолчанию: false
+Возможные значения: true, false</code></pre>
+</section>
+
+<section>
+<p class="bold">nextButonTheme</p>
+<p>Цвет кнопок плагина</p>
+<pre class="language-javascript"><code>Значение по умолчанию: не задан
+Возможные значения: любые цвета в HEX, rgb, rgba</code></pre>
+</section>
+
+<section>
+<p class="bold">nextButonTheme</p>
+<p>Тема для кнопки перехода на следующий уровень</p>
+<pre class="language-javascript"><code>Значение по умолчанию: 'angle-right'
+Возможные значения: 'right', 'right-open', 'right-big', 'right-hand', 'right-circled', 'angle-circled-right', 'angle-double-right'</code></pre>
+</section>
+
+<section>
+<p class="bold">prevButonTheme</p>
+<p>Тема для кнопки перехода на предыдущий уровень</p>
+<pre class="language-javascript"><code>Значение по умолчанию: 'angle-left'
+Возможные значения: 'left', 'left-open', 'left-big', 'left-hand', 'left-circled', 'angle-circled-left', 'angle-double-left'</code></pre>
+</section>
+
+<section>
+<p class="bold">openButonTheme</p>
+<p>Тема для кнопки раскрытия меню</p>
+<pre class="language-javascript"><code>Значение по умолчанию: 'menu'
+Возможные значения: 'th-large', 'th', 'th-list', 'th-1', 'th-list-1'</code></pre>
+</section>
+
+<br />
+<hr>
+<br />
 
 
+  <section class="step__section">
+  <p class="under bold">Пример вызова плагина с собственными параметрами</p>
+<pre class="language-javascript"><code>$( document ).ready(function() {
+  $('.menu').mobileMenu({
+    'width': 900,
+    'next': '&lt;div class="next-arrow next-button">&lt;/div>',
+    'prev': '&lt;div class="back-arrow back-button">&lt;/div>',
+    'linkSwitch': true,
+    'nextButonTheme' : 'right',
+    'prevButonTheme' : 'left',
+    'openButonTheme' : 'th-list',
+    'colorTheme' : '#f09e00'
+  });
+});</code></pre>
+</section>
   <br />
-  <br />
-  <section>
-    <h3>Пример вызова плагина со своими параметрами</h3>
-    <div class="codearea">
-      <code>
-        <span>$( document ).ready(function() {</span>
-        <span style="padding-left: 15px;">$('.menu').mobileMenu({</span>
-        <span style="padding-left: 30px;">'width': 900,</span>
-        <span style="padding-left: 30px;">'next': '&lt;div class="next-arrow next-button"&gt;&rsaquo;&lt;/div&gt;',</span>
-        <span style="padding-left: 30px;">'prev': '&lt;div class="back-arrow back-button"&gt;&lsaquo;&lt;/div&gt;',</span>
-        <span style="padding-left: 15px;">});</span>
-        <span>});</span>
-      </code>
-    </div>
-  </section>
-  <br />
-
   <hr>
   <br />
   <section>

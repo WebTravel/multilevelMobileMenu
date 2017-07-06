@@ -240,29 +240,8 @@ section {
   cursor: pointer;
 }
 
-.codearea {
-  padding: 0.5em;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  word-wrap: break-word;
-  border-radius: 4px;
-  margin: 1em 0;
-}
-
-code {
-  letter-spacing: 1px;
-  padding-top: 0.8em;
-  display: block;
-  color: #f09e00;
-  font-size: 0.875rem;
-}
-
-code span {
-  display: block;
-}
-
-code span em {
-  color: #333;
+.step__section {
+  margin: 1.5em 0
 }
 
 .download__link {

@@ -90,7 +90,8 @@ span.multimenuToggle {
   left: 20px;
   top: 6px;
   cursor: pointer;
-  font-size: 2rem
+  font-size: 2rem;
+  z-index: 101
 }
 
 .js-swipe {

@@ -42,7 +42,6 @@
         //addColor function
         function addColor(element) {
           if(self.options.colorTheme != '') {
-            console.log(element);
             $(element).css({'color' : self.options.colorTheme})
           }
         }

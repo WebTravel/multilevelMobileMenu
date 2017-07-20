@@ -1,3 +1,5 @@
+$multiLinkColor: #473420;
+
 @font-face {
   font-family: 'multimenu-icons';
   src: url('../fonts/multimenu-icons.eot?14173033');
@@ -11,7 +13,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+.multilevelMenu [class^="icon-"]:before, .multilevelMenu [class*=" icon-"]:before,span.multimenuToggle:before {
   font-family: 'multimenu-icons';
   font-style: normal;
   font-weight: normal;
@@ -139,7 +141,6 @@
   bottom: 0;
   right: 0;
   top: auto;
-  max-height: 100%;
   height: 100%;
   width: 100%;
   pointer-events: none;
@@ -149,6 +150,7 @@
   .multilevelOverlay {
     opacity: 1;
     pointer-events: auto;
+    max-height: 100%;
   }
   overflow: hidden;
 }
@@ -253,14 +255,14 @@ span.multimenuToggle {
   }
   a {
     text-decoration: none;
-    color: #473420;
+    color: $multiLinkColor;
     display: block;
     width: 100%;
     padding: 7px 35px 7px 15px;
     position: relative;
     box-sizing: border-box;
     font-size: 1.25rem;
-    line-height: 1.35;
+    line-height: 1;
   }
   .js-arrow {
     position: absolute;
@@ -269,7 +271,7 @@ span.multimenuToggle {
     height: 100%;
     width: 35px;
     cursor: pointer;
-    font-size: 1.25rem;
+    font-size: 1rem;
     z-index: 2;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -293,7 +295,7 @@ span.multimenuToggle {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 

@@ -119,7 +119,7 @@
         addColor('.multimenuToggle');
 
         //add Overlay
-        $('body').append('<div class="multilevelOverlay js-overlay"></div>');
+        element.before('<div class="multilevelOverlay js-overlay"></div>');
 
         //create work-menu function
         function mobileMenu() {
